@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layered Motion Background</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: black;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            filter: blur(50px);
+        }
+        i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10em;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="backgroundCanvas">
+    </canvas>
+    <h1><i class="fas fa-sad-cry    ">sadasdsad</i></h1>
+
+    <script>
+        const canvas = document.getElementById("backgroundCanvas");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const balls = [];
+        const numBalls = 6; // Fewer, but bigger
+
+        const colors = [
+            "rgba(255, 99, 71, OPACITY)",   // Tomato
+            "rgba(0, 255, 127, OPACITY)",   // Spring Green
+            "rgba(30, 144, 255, OPACITY)",  // Dodger Blue
+            "rgba(255, 215, 0, OPACITY)",   // Gold
+            "rgba(138, 43, 226, OPACITY)",  // Blue Violet
+            "rgba(255, 69, 0, OPACITY)"     // Red-Orange
+        ];
+
+        class Ball {
+            constructor(index) {
+                this.radius = Math.random() * 60 + 300; // Adjusted size
+                this.x = Math.random() * (canvas.width - this.radius * 2) + this.radius;
+                this.y = Math.random() * (canvas.height - this.radius * 2) + this.radius;
+                this.speedX = (Math.random() - 0.5) * 4; // Reduced speed
+                this.speedY = (Math.random() - 0.5) * 4; // Reduced speed
+                this.opacity = (Math.random() * 0.1) + 0.6; // Opacity 60-70%
+                this.color = colors[Math.floor(Math.random() * colors.length)].replace("OPACITY", this.opacity);
+                this.zIndex = index; // Each ball has a unique layer depth
+            }
+
+            move() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Bounce at edges
+                if (this.x - this.radius < 0 || this.x + this.radius > canvas.width + 500) {
+                    this.speedX *= -1;
+                }
+                if (this.y - this.radius < 0 || this.y + this.radius > canvas.height+ 500) {
+                    this.speedY *= -1;
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.fillStyle = this.color;
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            for (let i = 0; i < numBalls; i++) {
+                balls.push(new Ball(i));
+            }
+            animate();
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Sort balls by z-index for correct layering
+            balls.sort((a, b) => a.zIndex - b.zIndex);
+
+            for (let ball of balls) {
+                ball.move();
+                ball.draw();
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener("resize", () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        init();
+    </script>
+</body>
+</html>
