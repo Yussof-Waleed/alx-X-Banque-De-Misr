@@ -73,6 +73,61 @@
             opacity: 30%;
             z-index: -1; /* Ensure it stays behind other elements */
         }
+
+        .bg-blue-700, .bg-blue-600 {
+            background-color: #05F283 !important;
+        }
+
+        /* Override background colors */
+        .bg-blue-700 {
+        background-color: #05F283 !important; /* color1 */
+        }
+
+        .bg-blue-800 {
+        background-color: #ffc107 !important; /* color2 */
+        }
+
+        /* Override text colors */
+        .text-blue-700, .md\:hover\:text-blue-700:hover {
+        color: #05F283 !important; /* color1 */
+        }
+
+        .text-blue-800 {
+        color: #ffc107 !important; /* color2 */
+        }
+
+        /* Override responsive background colors */
+        .md\:bg-blue-700 {
+        background-color: #05F283 !important; /* color1 */
+        }
+
+        .md\:bg-blue-800 {
+        background-color: #ffc107 !important; /* color2 */
+        }
+
+        /* Override responsive text colors */
+        .md\:text-blue-700 {
+        color: #05F283 !important; /* color1 */
+        }
+
+        .md\:text-blue-800 {
+        color: #ffc107 !important; /* color2 */
+        }
+
+        /* Override decoration color */
+        .decoration-blue-400 {
+        text-decoration-color: #05F283 !important; /* color1 */
+        }
+
+        .btnapply{
+            color: #002B56 !important;
+        }
+        .btnapply:hover {
+            background-color: #ffc107 !important; /* color2 */
+        }
+        * {
+            transition: all 0.4s ease !important;
+        }
       </style>
  
 </head>
@@ -89,7 +144,7 @@
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
 
             <img src="./assets/partnership-light.png" alt="Other Logo" class="h-12 mx-4 border-r border-gray-300 pr-3 hidden sm:block">
-            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-6 py-3 text-center me-2 mb-2   ">Apply Now !</button>
+            <button type="button" class="btnapply bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-6 py-3 text-center me-2 mb-2" style="color: #002B56 !important;">Apply Now !</button>
             <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200   " aria-controls="navbar-sticky" aria-expanded="false">
               <span class="sr-only">Open main menu</span>
               <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -100,16 +155,16 @@
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
           <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white  md: ">
             <li>
-              <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:" aria-current="page">Home</a>
+              <a href="#" class="block py-2 px-3 text-white rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:" aria-current="page">Home</a>
             </li>
             <li>
-              <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:    md: ">About</a>
+              <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">About</a>
             </li>
             <li>
-              <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:    md: ">Services</a>
+              <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Services</a>
             </li>
             <li>
-              <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:    md: ">Contact</a>
+              <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Contact</a>
             </li>
           </ul>
         </div>
@@ -120,13 +175,13 @@
         <canvas id="backgroundCanvas" ></canvas>
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center :py-18 lg:px-12">
             <a href="#" class="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full   hover:bg-gray-200 " role="alert">
-                <span class="text-xs bg-primary-200 rounded-full text-white px-4 py-1.5 mr-3">New</span> <span class="text-sm font-medium">A Partnership is out! See what's new</span> 
+                <span class="text-xs bg-primary-200 rounded-full text-blue-800 px-4 py-1.5 mr-3">New</span> <span class="text-sm font-medium">A Partnership is out! See what's new</span> 
                 <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
             </a>
             <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl ">Unlock Your Potential: ALX Egypt x Banque Misr Youth Partnership</h1>
             <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 ">Together, we are empowering the next generation of leaders, entrepreneurs, and innovators in Egypt.</p>
             <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
-                <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-lg px-6 py-3 text-center me-2 mb-2   ">Apply Now !</button>
+                <button type="button" class=" btnapply bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-lg px-6 py-3 text-center me-2 mb-2" >Apply Now !</button>
 
             </div>
             <div class="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
@@ -219,7 +274,7 @@
                 </div>
                 
                 <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-                <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-6 py-3 text-center me-2 mb-2   ">Apply Now !</button>
+                <button type="button" class="btnapply bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-6 py-3 text-center me-2 mb-2"style="color: #002B56 !important;">Apply Now !</button>
 
                     
                     <div class="grid grid-cols-1 gap-x-8 gap-y-6 text-base/7 font-semibold text-white sm:grid-cols-2 md:flex lg:gap-x-10">
@@ -254,7 +309,7 @@
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:text-center">
             
-            <h2 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl ">WHY TO <mark class="px-2 text-white bg-blue-600 rounded-sm ">JOIN</mark> US ?</h1>
+            <h2 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl ">WHY TO <mark class="px-2 bg-blue-600 rounded-sm" style="color: #002B56 !important;">JOIN</mark> US ?</h1>
         </div>
         <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
             <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-2">
@@ -448,8 +503,25 @@
       </div>
     </div>
   </section>
+<hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded-sm md:my-10 dark:bg-gray-700">
 
-  
+  <section class="bg-white dark:bg-gray-900">
+    <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+        <!-- Image -->
+        <img class="w-full dark:hidden" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg" alt="dashboard image">
+
+        <!-- Content -->
+        <div class="mt-4 md:mt-0">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">What Are You Waiting For?!</h2>
+            <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
+                Join the ALX Egypt x Banque Misr Youth Partnership today and unlock your potential. Empower yourself with cutting-edge learning opportunities, mentorship, and career-building programs designed to shape your future.
+            </p>
+                <button type="button" class="btnapply bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-6 py-3 text-center me-2 mb-2"style="color: #002B56 !important;">Apply Now !</button>
+
+        </div>
+    </div>
+</section>
+
     <footer class="bg-white shadow-sm  ">
         <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
             <div class="sm:flex sm:items-center sm:justify-between">
